@@ -11,10 +11,10 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "SO:ME:FIN:G:ER:PR:IN:T"-o StrictHostKeyChecking=no
+            - "SO:ME:FIN:G:ER:PR:IN:T"
       - run:
           name: Install awscli
-          command: ssh -o StrictHostKeyChecking=no root@36.255.68.189 "echo 'hi'"
+          command: ssh -o StrictHostKeyChecking=no root@36.255.68.189 echo 1
 #   build:
 #     working_directory: ~/circleci-demo-python-django
 #     docker:
