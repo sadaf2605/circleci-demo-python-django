@@ -1,6 +1,10 @@
-version: 2
+version: 2.1
+workflows:
+  build_test_deploy:
+    jobs:
+      - deploy
 jobs:
-  build:
+  deploy:
     steps:
       - add_ssh_keys:
           fingerprints:
