@@ -14,7 +14,7 @@ jobs:
             - "SO:ME:FIN:G:ER:PR:IN:T"
       - run:
           name: add to known hosts
-          command: ssh-keyscan 36.255.68.189 >> ~/.ssh/known_hosts 
+          command: ssh-keyscan 36.255.68.189 >> ~/.ssh/known_hosts && ssh-add -l
       - run:
           name: run command
           command: ssh -o StrictHostKeyChecking=no root@36.255.68.189 echo 1
