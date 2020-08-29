@@ -11,13 +11,14 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "SO:ME:FIN:G:ER:PR:IN:T"
+            - "8b:d7:82:ae:42:7e:d4:20:ed:6e:98:eb:6b:1e:c2:26"
+            - "93:67:09:95:be:98:e6:4d:2b:a3:36:8f:28:0e:d4:27"
       - run:
           name: add to known hosts
-          command: ssh-keyscan 36.255.68.189 >> ~/.ssh/known_hosts && ssh-add -l
+          command: ssh-keyscan 36.255.68.189 >> ~/.ssh/known_hosts &&  ssh-keyscan 54.255.248.85 >> ~/.ssh/known_hosts
       - run:
           name: run command
-          command: ssh -o StrictHostKeyChecking=no root@36.255.68.189 echo 1
+          command: ssh -o StrictHostKeyChecking=no ec2-user@54.255.248.85 echo 1
 #   build:
 #     working_directory: ~/circleci-demo-python-django
 #     docker:
