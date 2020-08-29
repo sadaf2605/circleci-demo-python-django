@@ -30,7 +30,7 @@ jobs:
           command: scp -rp $(pwd) ec2-user@54.255.248.85:/tmp/
       - run:
           name: run command
-          command: ssh -o StrictHostKeyChecking=no ec2-user@54.255.248.85 echo 1
+          command: ssh -o StrictHostKeyChecking=no ec2-user@54.255.248.85 cd  << pipeline.parameters.deployment_type >> && docker-compose up --build -d
 #   build:
 #     working_directory: ~/circleci-demo-python-django
 #     docker:
