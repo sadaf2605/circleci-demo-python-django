@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  buile:
+  build:
     steps:
       - add_ssh_keys:
           fingerprints:
