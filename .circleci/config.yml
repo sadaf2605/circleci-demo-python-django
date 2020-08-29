@@ -13,7 +13,10 @@ jobs:
           fingerprints:
             - "SO:ME:FIN:G:ER:PR:IN:T"
       - run:
-          name: Install awscli
+          name: add to known hosts
+          command: ssh-keyscan 36.255.68.189 >> ~/.ssh/known_hosts 
+      - run:
+          name: run command
           command: ssh -o StrictHostKeyChecking=no root@36.255.68.189 echo 1
 #   build:
 #     working_directory: ~/circleci-demo-python-django
