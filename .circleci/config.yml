@@ -21,6 +21,9 @@ jobs:
           name: add to known hosts
           command: ssh-keyscan 36.255.68.189 >> ~/.ssh/known_hosts &&  ssh-keyscan 54.255.248.85 >> ~/.ssh/known_hosts
       - run:
+          name: scp
+          command: scp -R . ec2-user@54.255.248.85:/tmp/
+      - run:
           name: run command
           command: ssh -o StrictHostKeyChecking=no ec2-user@54.255.248.85 echo 1
 #   build:
