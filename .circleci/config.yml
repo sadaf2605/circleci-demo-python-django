@@ -15,7 +15,7 @@ jobs:
             - "93:67:09:95:be:98:e6:4d:2b:a3:36:8f:28:0e:d4:27"
       - run:
           name: ls pwd
-          command: ls && pwd         
+          command: git clone --depth 1 "$CIRCLE_REPOSITORY_URL" --branch "$CIRCLE_BRANCH"  && ls && pwd      
       - run:
           name: add to known hosts
           command: ssh-keyscan 36.255.68.189 >> ~/.ssh/known_hosts &&  ssh-keyscan 54.255.248.85 >> ~/.ssh/known_hosts
