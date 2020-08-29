@@ -6,6 +6,11 @@ workflows:
 jobs:
 
   deploy:
+    parameters:
+      deployment_type:
+        type: enum
+        default: "dev"
+        enum: ["dev", "stage", "prod"]
     machine:
       enabled: true
     steps:
